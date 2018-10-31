@@ -3,19 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/enzyme": "^3.1.14",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.1",
     "@types/react": "^16.4.18",
     "@types/react-dom": "^16.0.9",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "jest-enzyme": "^7.0.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "2.1.0",
+    "react-test-renderer": "^16.6.0",
     "typescript": "^3.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --no-cache",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -26,5 +33,26 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "collectCoverageFrom": [
+      "**/index.{js,jsx,ts,tsx}",
+      "!**/*stories.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/stories/**",
+      "!**/functions/**",
+      "!**/build/**",
+      "!**/e2etests/**",
+      "!**/coverage/**"
+    ],
+    "coverageReporters": ["text"]
+  }
 }
