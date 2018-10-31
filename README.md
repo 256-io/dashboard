@@ -1,3 +1,6 @@
+# DASHBOARD
+
+Dashboard this is a project to create an open source dashboard that shows economic data for Uganda.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
