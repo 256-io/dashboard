@@ -1,6 +1,6 @@
 import React from 'react';
 import mount from 'enzyme/mount'
-import App from './App';
+import App from '.';
 
 describe('App', () => {
   let wrapper
