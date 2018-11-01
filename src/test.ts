@@ -1,13 +1,12 @@
 import ReactDOM from 'react-dom';
-import '.'
-import {register} from './serviceWorker'
+import '.';
+import { register } from './serviceWorker';
 
+jest.mock('react-dom', () => ({
+  render:jest.fn(),
+}));
 
-jest.mock('react-dom',()=>({
-  render:jest.fn()
-}))
-
-jest.mock('./serviceWorker.js',()=>({register:jest.fn()}))
+jest.mock('./serviceWorker.js', () => ({ register:jest.fn() }));
 
 describe('entry point', () => {
   it('should call ReactDOm.render', () => {
