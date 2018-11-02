@@ -1,6 +1,9 @@
 import React from 'react';
-
-const Dials = () => {
+interface DialProps{
+  value:Object;
+  onChange:Function;
+}
+const Dials = ({ value, onChange }:DialProps) => {
   return (
     <div>
       These dials allow you to adjust numbers
