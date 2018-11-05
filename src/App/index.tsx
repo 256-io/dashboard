@@ -1,22 +1,20 @@
 import React, { Fragment } from 'react';
 import withState from 'recompose/withState';
 import Titles from './titles';
-import Dials from './dials';
 import Visualizations from './visualizations';
 
 interface State {
-  data:object;
+  data:any;
   setData: Function;
 }
 interface Props {
-  data: object;
+  data: any;
 }
 
 const App = ({ data, setData }:State) => {
   return (
     <Fragment>
       <Titles/>
-      <Dials value={data} onChange={setData} />
       <Visualizations/>
     </Fragment>
   );
