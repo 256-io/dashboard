@@ -1,17 +1,25 @@
 import React from 'react';
 import { Consumer } from '../../context';
-import { Typography, Card, CardContent, CardHeader } from '@material-ui/core';
-import './styles.css';
+import { Typography, Card, CardContent, CardHeader, withStyles } from '@material-ui/core';
 
-const GDP = () => {
+const styles = () => ({
+  content: {
+    'text-align':'center',
+  },
+});
+interface Classes {
+  content:string;
+}
+
+const GDP = ({ classes }:{classes:Classes}) => {
   return (
     <Consumer>
       {
         ({ gdp }) => {
           const billions = gdp.value / 1e9;
           return (
-            <Card className="wrapper" elevation={2} >
-              <CardContent className="content" >
+            <Card elevation={2} >
+              <CardContent className={classes.content} >
                 <Typography variant="title" >
                   Uganda's Produces
                 </Typography>
@@ -33,4 +41,4 @@ const GDP = () => {
   );
 };
 
-export default GDP;
+export default withStyles(styles)(GDP);
