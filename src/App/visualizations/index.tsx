@@ -1,9 +1,10 @@
 import React from 'react';
+import GDP from './gdp';
 
 const Visualizations = () => {
   return (
     <div>
-        Visualizations
+        <GDP/>
     </div>
   );
 };
