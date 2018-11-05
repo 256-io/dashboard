@@ -21,7 +21,7 @@ const GDP = ({ classes }:{classes:Classes}) => {
             <Card elevation={2} >
               <CardContent className={classes.content} >
                 <Typography variant="title" >
-                  Uganda's Produces
+                  Uganda Produces
                 </Typography>
                 <Typography color="error" variant="h1" >
                 ${Number(billions.toFixed(1))}
