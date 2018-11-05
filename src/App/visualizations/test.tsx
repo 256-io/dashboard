@@ -2,6 +2,7 @@ import React from 'react';
 import Visualizations from '.';
 import { ShallowWrapper, shallow } from 'enzyme';
 import GDP from './gdp';
+import PerCapita from './per-capita';
 
 describe('Visualizations', () => {
   let wrapper:ShallowWrapper;
@@ -13,5 +14,8 @@ describe('Visualizations', () => {
   });
   it('should  render GDP', () => {
     expect(wrapper.find(GDP)).toHaveLength(1);
+  });
+  it('should render PerCapita', () => {
+    expect(wrapper.find(PerCapita)).toHaveLength(1);
   });
 });

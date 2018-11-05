@@ -3,34 +3,42 @@ import { Consumer } from '../../context';
 import { Typography, Card, CardContent, CardHeader, withStyles } from '@material-ui/core';
 
 const styles = () => ({
+  card:{
+    display:'flex',
+    'flex-direction':'column',
+  },
   content: {
+    display:'flex',
     'text-align':'center',
+    outline:'1px solid red',
+    'flex-direction':'column',
+    'flex-grow':'1',
+    'justify-content':'space-between',
   },
 });
 interface Classes {
   content:string;
+  card:string;
 }
 
-const GDP = ({ classes }:{classes:Classes}) => {
+const GDPPerCapita = ({ classes }:{classes:Classes}) => {
   return (
     <Consumer>
       {
-        ({ gdp }) => {
+        ({ gdp, population }) => {
           const billions = gdp.value / 1e9;
+          const gdppc = gdp.value / population.value;
           return (
-            <Card elevation={2} >
+            <Card  className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography variant="title" >
-                  Uganda Produces
+                  The Average Ugandan Produces
                 </Typography>
-                <Typography color="error" variant="h1" >
-                ${Number(billions.toFixed(1))}
-                </Typography>
-                <Typography color="error" variant="h3" >
-                  Billion
+                <Typography color="primary" variant="h1" >
+                ${Number(gdppc.toFixed(0))}
                 </Typography>
                 <Typography variant="h6" >
-                  In Goods and Services a year
+                  In Goods and services a year
                 </Typography>
               </CardContent>
             </Card>
@@ -41,4 +49,4 @@ const GDP = ({ classes }:{classes:Classes}) => {
   );
 };
 
-export default withStyles(styles)(GDP);
+export default withStyles(styles)(GDPPerCapita);
