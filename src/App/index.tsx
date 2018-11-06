@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import withState from 'recompose/withState';
+import Titles from './titles';
+import Visualizations from './visualizations';
+import { Provider, defaultData } from './context';
 
-const App = () => {
-  return <h1>This is the App</h1>;
+interface State {
+  data:any;
+  setData: Function;
+}
+interface Props {
+  data: any;
+}
+
+const App = ({ data, setData }:State) => {
+  return (
+    <Fragment>
+      <Titles/>
+      <Provider value={data} >
+        <Visualizations/>
+      </Provider>
+    </Fragment>
+  );
 };
-export default App;
+
+export default withState('data', 'setData',
+                         ({ data }:any) => {
+                           return data || defaultData;
+                         })(App);
