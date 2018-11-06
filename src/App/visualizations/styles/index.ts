@@ -8,14 +8,14 @@ export default  () => ({
   card:{
     display:'flex',
     'flex-direction':'column',
-    'min-width':'min-content',
+    margin:4,
   },
   content: {
     display:'flex',
     'text-align':'center',
+    outline:'1px solid red',
     'flex-direction':'column',
     'flex-grow':'1',
     'justify-content':'space-between',
-    'min-width':'min-content',
   },
 });

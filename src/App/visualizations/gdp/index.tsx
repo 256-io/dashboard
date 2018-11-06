@@ -10,7 +10,7 @@ const GDP = ({ classes }:{classes:ClassNames}) => {
         ({ gdp }) => {
           const billions = gdp.value / 1e9;
           return (
-            <Card elevation={2} >
+            <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography variant="title" >
                   Uganda Produces
