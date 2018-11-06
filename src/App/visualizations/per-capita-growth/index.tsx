@@ -43,4 +43,4 @@ const PerCapitaGrowth = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles('/images/pcgrowth.jpg'))(PerCapitaGrowth);
+export default withStyles(styles('images/pcgrowth.jpg'))(PerCapitaGrowth);

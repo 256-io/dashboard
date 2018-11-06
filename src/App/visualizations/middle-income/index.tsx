@@ -35,4 +35,4 @@ const MiddleIncomeNeed = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles('/images/balance.jpg'))(MiddleIncomeNeed);
+export default withStyles(styles('images/balance.jpg'))(MiddleIncomeNeed);
