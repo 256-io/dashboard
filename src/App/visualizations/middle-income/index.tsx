@@ -7,8 +7,8 @@ const MiddleIncomeNeed = ({ classes }:{classes:ClassNames}) => {
   return (
     <Consumer>
       {
-        ({ gdp, population }) => {
-          const middleIncomeGDP = 1025 * population.value;
+        ({ gdp, population, target }) => {
+          const middleIncomeGDP = target.perCapitaValue * population.value;
           const neededForMiddleIncome = middleIncomeGDP - gdp.value;
           const billions = neededForMiddleIncome / 1e9;
           return (
@@ -24,7 +24,7 @@ const MiddleIncomeNeed = ({ classes }:{classes:ClassNames}) => {
                   Billion
                 </Typography>
                 <Typography className={classes.text} variant="h6" >
-                  To Become A Middle Income Country
+                  To Reach <b>{target.label}</b>
                 </Typography>
               </CardContent>
             </Card>

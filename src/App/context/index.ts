@@ -9,6 +9,10 @@ export const defaultData = {
     value:40e6,
     growthRate:0.033,
   },
+  target:{
+    label:'Lower Middle Income',
+    perCapitaValue:1025,
+  },
 };
 
 export const { Provider, Consumer } = React.createContext(defaultData);

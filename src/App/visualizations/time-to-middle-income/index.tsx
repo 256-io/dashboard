@@ -7,14 +7,14 @@ const TimeToMiddleIncome = ({ classes }:{classes:ClassNames}) => {
   return (
     <Consumer>
       {
-        ({ gdp, population }) => {
+        ({ gdp, population, target }) => {
           const newGDP = gdp.value * (1 + gdp.growthRate);
           const newPopulation = population.value * (1 + population.growthRate);
           const perCapita = (gdp.value / population.value);
           const newPerCapita = (newGDP / newPopulation);
           const changeInPerCapita = newPerCapita - perCapita;
           const perCapitaGrowthRate = changeInPerCapita / perCapita;
-          const yearsToMiddleIncome = Math.log(1025 / perCapita) /
+          const yearsToMiddleIncome = Math.log(target.perCapitaValue / perCapita) /
                                       Math.log(1 + perCapitaGrowthRate);
           return (
             <Card className={classes.card} elevation={2} >
@@ -32,7 +32,7 @@ const TimeToMiddleIncome = ({ classes }:{classes:ClassNames}) => {
                       Years
                     </Typography>
                 <Typography className={classes.text} variant="h6" >
-                  To Get To Lower Middle Income Status
+                  To Reach <b>{target.label}</b>
                 </Typography>
               </CardContent>
             </Card>
