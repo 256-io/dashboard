@@ -5,6 +5,7 @@ import GDP from './gdp';
 import PerCapita from './per-capita';
 import GDPGrowth from './gdp-growth';
 import PerCapitaGrowth from './per-capita-growth';
+import MiddleIncome from './time-to-middle-income';
 
 describe('Visualizations', () => {
   let wrapper:ShallowWrapper;
@@ -25,5 +26,8 @@ describe('Visualizations', () => {
   });
   it('should show PerCapitaGrowth', () => {
     expect(wrapper.find(PerCapitaGrowth)).toHaveLength(1);
+  });
+  it('should show MiddleIncome', () => {
+    expect(wrapper.find(MiddleIncome)).toHaveLength(1);
   });
 });

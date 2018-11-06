@@ -3,11 +3,12 @@ import GDP from './gdp';
 import PerCapita from './per-capita';
 import GDPGrowth from './gdp-growth';
 import PerCapitaGrowth from './per-capita-growth';
+import MiddleIncome from './time-to-middle-income';
 
 const styles = {
   display: 'grid',
   gridTemplateColumns: 'repeat( auto-fit, minmax(250px, auto) )',
-  gridGap: '4px',
+  gridGap: '8px',
 };
 
 const Visualizations = () => {
@@ -17,6 +18,7 @@ const Visualizations = () => {
         <PerCapita/>
         <GDPGrowth/>
         <PerCapitaGrowth/>
+        <MiddleIncome/>
     </div>
   );
 };
