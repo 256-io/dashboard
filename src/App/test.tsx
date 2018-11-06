@@ -31,8 +31,11 @@ describe('App', () => {
       expect(contextProvider).toHaveLength(1);
     });
     it('should have the App data prop as its value prop', () => {
-      const expectedContext = wrapper.childAt(0).prop('data');
-      expect(contextProvider.prop('value')).toBe(expectedContext);
+      const expectedContext = {
+        ...wrapper.childAt(0).prop('data'),
+        update: wrapper.childAt(0).prop('setData'),
+      };
+      expect(contextProvider.prop('value')).toEqual(expectedContext);
     });
     describe('Visualizations', () => {
       let viz :ReactWrapper;

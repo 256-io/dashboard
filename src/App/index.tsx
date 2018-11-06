@@ -27,10 +27,14 @@ const theme = createMuiTheme({
 });
 
 const App = ({ data, setData }:State) => {
+  const context = {
+    ...data,
+    update: setData,
+  };
   return (
     <MuiThemeProvider theme={theme}>
       <Titles/>
-      <Provider value={data} >
+      <Provider value={context} >
         <Visualizations/>
       </Provider>
     </MuiThemeProvider>
