@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import withState from 'recompose/withState';
 import Titles from './titles';
 import Visualizations from './visualizations';
-import { Provider, defaultContext } from './context';
+import { Provider } from './context';
+import { defaultContext } from './context/default';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import yellow from '@material-ui/core/colors/yellow';
 

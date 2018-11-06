@@ -1,5 +1,6 @@
 import React from 'react';
-import { Provider, Consumer, defaultContext } from '.';
+import { Provider, Consumer } from '.';
+import { defaultContext } from './default';
 
 jest.mock('react', () => {
   return {

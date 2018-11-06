@@ -2,7 +2,8 @@ import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import Titles from './titles';
 import Visualizations from './visualizations';
-import { Provider, defaultContext } from './context';
+import { Provider } from './context';
+import { defaultContext } from './context/default';
 import App from '.';
 
 jest.mock('./context', () => ({
@@ -30,7 +31,8 @@ describe('App', () => {
       expect(contextProvider).toHaveLength(1);
     });
     it('should have the App data prop as its value prop', () => {
-      expect(contextProvider.prop('value')).toBe(wrapper.prop('data'));
+      const expectedContext = wrapper.childAt(0).prop('data');
+      expect(contextProvider.prop('value')).toBe(expectedContext);
     });
     describe('Visualizations', () => {
       let viz :ReactWrapper;
