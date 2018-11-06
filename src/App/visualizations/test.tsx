@@ -1,6 +1,6 @@
 import React from 'react';
 import Visualizations from '.';
-import { ShallowWrapper, shallow } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import GDP from './gdp';
 import PerCapita from './per-capita';
 import GDPGrowth from './gdp-growth';
@@ -9,9 +9,9 @@ import TimeToMiddleIncome from './time-to-middle-income';
 import MiddleIncome from './middle-income';
 
 describe('Visualizations', () => {
-  let wrapper:ShallowWrapper;
+  let wrapper:ReactWrapper;
   beforeEach(() => {
-    wrapper = shallow(<Visualizations/>);
+    wrapper = mount(<Visualizations/>);
   });
   it('should render without crashing', () => {
     expect(wrapper.exists()).toBeTruthy();

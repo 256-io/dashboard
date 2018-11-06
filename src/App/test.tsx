@@ -9,12 +9,11 @@ jest.mock('./context', () => ({
   Provider:({ children }:{children:any}) => <div>{children}</div>,
 }));
 jest.mock('./visualizations', () => () => <div></div>);
-const data = { sample:'data' };
 
 describe('App', () => {
   let wrapper : ReactWrapper;
   beforeEach(() => {
-    wrapper = mount(<App data={data}/>);
+    wrapper = mount(<App />);
   });
   it('renders without crashing', () => {
     expect(wrapper.exists()).toBe(true);

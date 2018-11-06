@@ -23,7 +23,4 @@ const App = ({ data, setData }:State) => {
   );
 };
 
-export default withState('data', 'setData',
-                         ({ data }:any) => {
-                           return data || defaultData;
-                         })(App);
+export default withState('data', 'setData', defaultData)(App);
