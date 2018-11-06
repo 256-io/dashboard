@@ -17,20 +17,21 @@ const PerCapitaGrowth = ({ classes }:{classes:ClassNames}) => {
           return (
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
-                <Typography variant="title" >
+                <Typography className={classes.text} variant="h6" >
                   Individual Productivity is Growing
                 </Typography>
-                  <div>
-                    <Typography color="error" variant="h1" >
+                    <Typography color="secondary" variant="h1" >
                       ${Number(changeInPerCapita.toPrecision(3))}
                     </Typography>
-                </div>
-                    <Typography color="primary" component="span" variant="h4"
+                    <Typography color="secondary" component="span" variant="h4"
                     style={{ whiteSpace:'nowrap' }} >
-                      <Typography variant="h6" style={{ display:'inline' }}>or&nbsp; </Typography>
+                      <Typography
+                        className={classes.text} variant="h6" style={{ display:'inline' }}>
+                        or&nbsp;
+                      </Typography>
                        {(perCapitaGrowth * 100).toPrecision(2)}%
                     </Typography>
-                <Typography variant="h6" >
+                <Typography className={classes.text} variant="h6" >
                   Per Ugandan, Per Year
                 </Typography>
               </CardContent>
@@ -42,4 +43,4 @@ const PerCapitaGrowth = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles)(PerCapitaGrowth);
+export default withStyles(styles('/pcgrowth.jpg'))(PerCapitaGrowth);

@@ -3,6 +3,8 @@ import withState from 'recompose/withState';
 import Titles from './titles';
 import Visualizations from './visualizations';
 import { Provider, defaultData } from './context';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import yellow from '@material-ui/core/colors/yellow';
 
 interface State {
   data:any;
@@ -12,14 +14,25 @@ interface Props {
   data: any;
 }
 
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+  palette:{
+    secondary:{
+      main: yellow['A700'],
+    },
+  },
+});
+
 const App = ({ data, setData }:State) => {
   return (
-    <Fragment>
+    <MuiThemeProvider theme={theme}>
       <Titles/>
       <Provider value={data} >
         <Visualizations/>
       </Provider>
-    </Fragment>
+    </MuiThemeProvider>
   );
 };
 

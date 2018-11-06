@@ -13,13 +13,13 @@ const GDPPerCapita = ({ classes }:{classes:ClassNames}) => {
           return (
             <Card  className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
-                <Typography variant="title" >
+                <Typography className={classes.text} variant="h6" >
                   The Average Ugandan Produces
                 </Typography>
-                <Typography color="primary" variant="h1" >
+                <Typography color="secondary" variant="h1" >
                 ${Number(gdppc.toFixed(0))}
                 </Typography>
-                <Typography variant="h6" >
+                <Typography className={classes.text} variant="h6" >
                   In Goods and services a year
                 </Typography>
               </CardContent>
@@ -31,4 +31,4 @@ const GDPPerCapita = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles)(GDPPerCapita);
+export default withStyles(styles('/pc.jpg'))(GDPPerCapita);
