@@ -33,4 +33,4 @@ const GDP = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles('/images/gdp.jpg'))(GDP);
+export default withStyles(styles('images/gdp.jpg'))(GDP);

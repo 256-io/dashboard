@@ -45,4 +45,4 @@ const GDPGrowth = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles('/images/growth.jpg'))(GDPGrowth);
+export default withStyles(styles('images/growth.jpg'))(GDPGrowth);
