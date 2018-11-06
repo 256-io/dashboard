@@ -28,7 +28,8 @@ const GDPGrowth = ({ classes }:{classes:ClassNames}) => {
                 </div>
                     <Typography color="primary" component="span" variant="h4"
                     style={{ whiteSpace:'nowrap' }} >
-                      &nbsp;or {growth}%
+                    <Typography variant="h6" style={{ display:'inline' }}>or&nbsp; </Typography>
+                    {growth}%
                     </Typography>
                 <Typography variant="h6" >
                   A year
