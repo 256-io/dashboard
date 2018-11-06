@@ -2,6 +2,7 @@ import React from 'react';
 import GDP from './gdp';
 import PerCapita from './per-capita';
 import GDPGrowth from './gdp-growth';
+import PerCapitaGrowth from './per-capita-growth';
 
 const styles = {
   display: 'grid',
@@ -15,6 +16,7 @@ const Visualizations = () => {
         <GDP/>
         <PerCapita/>
         <GDPGrowth/>
+        <PerCapitaGrowth/>
     </div>
   );
 };
