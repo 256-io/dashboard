@@ -1,17 +1,9 @@
 import React from 'react';
 import { Consumer } from '../../context';
 import { Typography, Card, CardContent, CardHeader, withStyles } from '@material-ui/core';
+import styles, { ClassNames } from '../styles';
 
-const styles = () => ({
-  content: {
-    'text-align':'center',
-  },
-});
-interface Classes {
-  content:string;
-}
-
-const GDP = ({ classes }:{classes:Classes}) => {
+const GDP = ({ classes }:{classes:ClassNames}) => {
   return (
     <Consumer>
       {

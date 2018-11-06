@@ -1,27 +1,9 @@
 import React from 'react';
 import { Consumer } from '../../context';
 import { Typography, Card, CardContent, CardHeader, withStyles } from '@material-ui/core';
+import styles, { ClassNames } from '../styles';
 
-const styles = () => ({
-  card:{
-    display:'flex',
-    'flex-direction':'column',
-  },
-  content: {
-    display:'flex',
-    'text-align':'center',
-    outline:'1px solid red',
-    'flex-direction':'column',
-    'flex-grow':'1',
-    'justify-content':'space-between',
-  },
-});
-interface Classes {
-  content:string;
-  card:string;
-}
-
-const GDPPerCapita = ({ classes }:{classes:Classes}) => {
+const GDPPerCapita = ({ classes }:{classes:ClassNames}) => {
   return (
     <Consumer>
       {
