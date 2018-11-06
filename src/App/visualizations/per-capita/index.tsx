@@ -31,4 +31,4 @@ const GDPPerCapita = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles('/pc.jpg'))(GDPPerCapita);
+export default withStyles(styles('/images/pc.jpg'))(GDPPerCapita);
