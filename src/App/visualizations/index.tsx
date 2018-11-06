@@ -14,7 +14,7 @@ const styles = {
 
 const Visualizations = () => {
   return (
-    <div style={styles}>
+    <div className="viz">
         <GDP/>
         <PerCapita/>
         <GDPGrowth/>

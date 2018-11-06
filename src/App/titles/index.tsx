@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 
 const Titles = () => {
   return (
-    <Typography variant="title">
+    <Typography variant="h6">
       Dashboard
     </Typography>
   );

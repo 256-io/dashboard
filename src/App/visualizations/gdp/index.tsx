@@ -12,16 +12,16 @@ const GDP = ({ classes }:{classes:ClassNames}) => {
           return (
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
-                <Typography variant="title" >
+                <Typography className={classes.text} variant="h6" >
                   Uganda Produces
                 </Typography>
-                <Typography color="error" variant="h1" >
+                <Typography color="secondary" variant="h1" >
                 ${Number(billions.toFixed(1))}
                 </Typography>
-                <Typography color="error" variant="h3" >
+                <Typography color="secondary" variant="h3" >
                   Billion
                 </Typography>
-                <Typography variant="h6" >
+                <Typography className={classes.text} variant="h6" >
                   In Goods and Services a year
                 </Typography>
               </CardContent>
@@ -33,4 +33,4 @@ const GDP = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles)(GDP);
+export default withStyles(styles('/gdp.jpg'))(GDP);

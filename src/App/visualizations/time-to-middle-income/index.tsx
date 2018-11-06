@@ -19,19 +19,19 @@ const TimeToMiddleIncome = ({ classes }:{classes:ClassNames}) => {
           return (
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
-                <Typography variant="title" >
+                <Typography className={classes.text} variant="h6" >
                   With current growth rates It will take
                 </Typography>
                   <div>
-                    <Typography color="error" variant="h1" >
+                    <Typography color="secondary" variant="h1" >
                       {Number(yearsToMiddleIncome.toPrecision(3))}
                     </Typography>
                 </div>
-                    <Typography color="error" component="span" variant="h4"
+                    <Typography color="secondary" component="span" variant="h4"
                     style={{ whiteSpace:'nowrap' }} >
                       Years
                     </Typography>
-                <Typography variant="h6" >
+                <Typography className={classes.text} variant="h6" >
                   To Get To Lower Middle Income Status
                 </Typography>
               </CardContent>
@@ -43,4 +43,4 @@ const TimeToMiddleIncome = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles)(TimeToMiddleIncome);
+export default withStyles(styles('/time.jpg'))(TimeToMiddleIncome);
