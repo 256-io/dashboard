@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider, Consumer, defaultData } from '.';
+import { Provider, Consumer, defaultContext } from '.';
 
 jest.mock('react', () => {
   return {
@@ -17,6 +17,12 @@ describe('Context', () => {
     expect(Consumer).toBe('mockConsumer');
   });
   it('should call createContext with default Data', () => {
-    expect(React.createContext).toHaveBeenCalledWith(defaultData);
+    expect(React.createContext).toHaveBeenCalledWith(defaultContext);
+  });
+});
+
+describe('defaultContext', () => {
+  it('should have an update function that does not crash when called', () => {
+    defaultContext.update();
   });
 });

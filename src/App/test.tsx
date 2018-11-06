@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import Titles from './titles';
 import Visualizations from './visualizations';
-import { Provider, defaultData } from './context';
+import { Provider, defaultContext } from './context';
 import App from '.';
 
 jest.mock('./context', () => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const defaultData = {
+export const defaultContext = {
   gdp:{
     value:27e9,
     growthRate:0.05,
@@ -13,6 +13,7 @@ export const defaultData = {
     label:'Lower Middle Income',
     perCapitaValue:1025,
   },
+  update:() => {},
 };
 
-export const { Provider, Consumer } = React.createContext(defaultData);
+export const { Provider, Consumer } = React.createContext(defaultContext);

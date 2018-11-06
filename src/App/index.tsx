@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import withState from 'recompose/withState';
 import Titles from './titles';
 import Visualizations from './visualizations';
-import { Provider, defaultData } from './context';
+import { Provider, defaultContext } from './context';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import yellow from '@material-ui/core/colors/yellow';
 
@@ -36,4 +36,4 @@ const App = ({ data, setData }:State) => {
   );
 };
 
-export default withState('data', 'setData', defaultData)(App);
+export default withState('data', 'setData', defaultContext)(App);
