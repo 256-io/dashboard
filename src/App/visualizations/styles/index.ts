@@ -11,6 +11,7 @@ export default  (imageURL?:string) => {
       display: 'inline-flex',
       'flex-direction': 'column',
       margin: 4,
+      'background-color':'#000000',
       background:`url('${imageURL}')`,
       'background-size':'cover',
       // 'width':'fit-content',

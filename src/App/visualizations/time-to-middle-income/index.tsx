@@ -43,4 +43,4 @@ const TimeToMiddleIncome = ({ classes }:{classes:ClassNames}) => {
   );
 };
 
-export default withStyles(styles('/time.jpg'))(TimeToMiddleIncome);
+export default withStyles(styles('/images/time.jpg'))(TimeToMiddleIncome);
