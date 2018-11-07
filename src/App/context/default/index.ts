@@ -19,7 +19,7 @@ export const defaultContext: ContextType = {
     growthRate: 0.05,
   },
   population: {
-    value: 40e6,
+    value: 42.86e6,
     growthRate: 0.033,
   },
   target: {
