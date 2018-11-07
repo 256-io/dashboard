@@ -6,9 +6,10 @@ import { Provider } from './context';
 import { defaultContext } from './context/default';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import yellow from '@material-ui/core/colors/yellow';
+import DataForm from './data-form';
 
 interface State {
-  data:any;
+  data: any;
   setData: Function;
 }
 interface Props {
@@ -19,24 +20,24 @@ const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
   },
-  palette:{
-    secondary:{
+  palette: {
+    secondary: {
       main: yellow['A700'],
     },
+    type: 'dark',
   },
 });
 
-const App = ({ data, setData }:State) => {
-  const context = {
-    ...data,
-    update: setData,
-  };
+const App = ({ data, setData }: State) => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Titles/>
-      <Provider value={context} >
-        <Visualizations/>
-      </Provider>
+      <Titles />
+      <div className="viz">
+        <Provider value={{ ...data }}>
+          <Visualizations />
+        </Provider>
+        <DataForm setData={setData} data={data} />
+      </div>
     </MuiThemeProvider>
   );
 };

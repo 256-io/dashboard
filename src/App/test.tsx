@@ -3,16 +3,17 @@ import { mount, ReactWrapper } from 'enzyme';
 import Titles from './titles';
 import Visualizations from './visualizations';
 import { Provider } from './context';
-import { defaultContext } from './context/default';
+import DataForm from './data-form';
 import App from '.';
 
 jest.mock('./context', () => ({
-  Provider:({ children }:{children:any}) => <div>{children}</div>,
+  Provider: ({ children }: { children: any }) => <div>{children}</div>,
 }));
-jest.mock('./visualizations', () => () => <div></div>);
+jest.mock('./visualizations', () => () => <div />);
+jest.mock('./data-form', () => () => <div />);
 
 describe('App', () => {
-  let wrapper : ReactWrapper;
+  let wrapper: ReactWrapper;
   beforeEach(() => {
     wrapper = mount(<App />);
   });
@@ -22,8 +23,11 @@ describe('App', () => {
   it('should render Titles', () => {
     expect(wrapper.find(Titles).exists()).toBeTruthy();
   });
+  it('should render DataForm', () => {
+    expect(wrapper.find(DataForm).exists()).toBeTruthy();
+  });
   describe('ContextProvider', () => {
-    let contextProvider:ReactWrapper;
+    let contextProvider: ReactWrapper;
     beforeEach(() => {
       contextProvider = wrapper.find(Provider);
     });
@@ -38,7 +42,7 @@ describe('App', () => {
       expect(contextProvider.prop('value')).toEqual(expectedContext);
     });
     describe('Visualizations', () => {
-      let viz :ReactWrapper;
+      let viz: ReactWrapper;
       beforeEach(() => {
         viz = contextProvider.find(Visualizations);
       });

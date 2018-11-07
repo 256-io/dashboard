@@ -1,4 +1,19 @@
-export const defaultContext = {
+export interface ContextType {
+  gdp: {
+    value: number;
+    growthRate: number;
+  };
+  population: {
+    value: number;
+    growthRate: number;
+  };
+  target: {
+    label: string;
+    perCapitaValue: number;
+  };
+  [key: string]: object;
+}
+export const defaultContext: ContextType = {
   gdp: {
     value: 27e9,
     growthRate: 0.05,
@@ -11,5 +26,4 @@ export const defaultContext = {
     label: 'Lower Middle Income',
     perCapitaValue: 1025,
   },
-  update: () => { },
 };

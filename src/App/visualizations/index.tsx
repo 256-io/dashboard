@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import GDP from './gdp';
 import PerCapita from './per-capita';
 import GDPGrowth from './gdp-growth';
@@ -14,14 +14,14 @@ const styles = {
 
 const Visualizations = () => {
   return (
-    <div className="viz">
+    <Fragment>
         <GDP/>
         <PerCapita/>
         <GDPGrowth/>
         <PerCapitaGrowth/>
         <MiddleIncome/>
         <TimeToMiddleIncome/>
-    </div>
+    </Fragment>
   );
 };
 
