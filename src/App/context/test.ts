@@ -21,9 +21,3 @@ describe('Context', () => {
     expect(React.createContext).toHaveBeenCalledWith(defaultContext);
   });
 });
-
-describe('defaultContext', () => {
-  it('should have an update function that does not crash when called', () => {
-    defaultContext.update();
-  });
-});
