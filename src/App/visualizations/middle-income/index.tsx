@@ -15,7 +15,7 @@ const MiddleIncomeNeed = ({ classes }:{classes:ClassNames}) => {
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography className={classes.text} variant="h6" >
-                  Uganda Needs To Increase Production
+                  Uganda Needs To Increase Production By
                 </Typography>
                 <Typography color="secondary" variant="h1" >
                 ${Number(billions.toPrecision(3))}

@@ -14,13 +14,13 @@ const GDPPerCapita = ({ classes }:{classes:ClassNames}) => {
             <Card  className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography className={classes.text} variant="h6" >
-                  The Average Ugandan Produces
+                  The Average Ugandan is Producing
                 </Typography>
                 <Typography color="secondary" variant="h1" >
                 ${Number(gdppc.toFixed(0))}
                 </Typography>
                 <Typography className={classes.text} variant="h6" >
-                  In Goods and services a year
+                  In Goods and Services a Year
                 </Typography>
               </CardContent>
             </Card>

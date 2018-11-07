@@ -14,7 +14,7 @@ const GDPGrowth = ({ classes }:{classes:ClassNames}) => {
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography className={classes.text} variant="h6" >
-                  Productivity is Growing
+                  Productivity is Growing By
                 </Typography>
                   <div>
                     <Typography color="secondary" variant="h2" >
@@ -34,7 +34,7 @@ const GDPGrowth = ({ classes }:{classes:ClassNames}) => {
                     {growth}%
                     </Typography>
                 <Typography className={classes.text} variant="h6" >
-                  A year
+                  Per Year for the Country
                 </Typography>
               </CardContent>
             </Card>

@@ -18,7 +18,7 @@ const PerCapitaGrowth = ({ classes }:{classes:ClassNames}) => {
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography className={classes.text} variant="h6" >
-                  Individual Productivity is Growing
+                  Individual Productivity is Growing By
                 </Typography>
                     <Typography color="secondary" variant="h1" >
                       ${Number(changeInPerCapita.toPrecision(3))}

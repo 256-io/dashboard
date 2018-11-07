@@ -20,7 +20,7 @@ const TimeToMiddleIncome = ({ classes }:{classes:ClassNames}) => {
             <Card className={classes.card} elevation={2} >
               <CardContent className={classes.content} >
                 <Typography className={classes.text} variant="h6" >
-                  With current growth rates It will take
+                  With Current Growth Rates It Will Take
                 </Typography>
                   <div>
                     <Typography color="secondary" variant="h1" >

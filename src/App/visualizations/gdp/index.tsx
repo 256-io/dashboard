@@ -22,7 +22,7 @@ const GDP = ({ classes }:{classes:ClassNames}) => {
                   Billion
                 </Typography>
                 <Typography className={classes.text} variant="h6" >
-                  In Goods and Services a year
+                  In Goods and Services a Year
                 </Typography>
               </CardContent>
             </Card>
