@@ -5,14 +5,14 @@ import {
   CardHeader,
   Card,
   CardContent,
+  InputAdornment,
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { ContextType } from '../context/default';
 
 const styles = (theme: Theme) => ({
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    margin: theme.spacing.unit,
     width: 300,
   },
   card: {
@@ -42,11 +42,16 @@ const DataForm = ({
         <CardContent>
           <div className={classes.formGroup}>
             <TextField
+              variant="outlined"
               className={classes.textField}
               label={'GDP'}
               type="number"
               id="gdp-value-edit"
               value={gdp.value / 1e9}
+              InputProps={{
+                endAdornment: <InputAdornment position="end">Billion</InputAdornment>,
+                startAdornment: <InputAdornment position="start">$</InputAdornment>,
+              }}
               onChange={(e) => {
                 setData({
                   ...data,
@@ -59,11 +64,24 @@ const DataForm = ({
               // helperText="In Billions"
             />
             <TextField
+              variant="outlined"
               className={classes.textField}
               label={'Growth Rate'}
               type="number"
               id="gdp-growth-rate-edit"
-              value={gdp.growthRate * 100}
+              value={Number((gdp.growthRate * 100).toPrecision(3))}
+              InputProps={{
+                endAdornment: <InputAdornment position="end">%</InputAdornment>,
+              }}
+              onChange={(e) => {
+                setData({
+                  ...data,
+                  gdp: {
+                    ...data.gdp,
+                    growthRate: Number(e.target.value) / 100,
+                  },
+                });
+              }}
               // helperText="As a Percentage"
             />
           </div>
@@ -74,19 +92,42 @@ const DataForm = ({
         <CardContent>
           <div className={classes.formGroup}>
             <TextField
+              variant="outlined"
               className={classes.textField}
               label={'Population'}
               type="number"
               id="population-value-edit"
               value={population.value}
+              onChange={(e) => {
+                setData({
+                  ...data,
+                  population: {
+                    ...data.population,
+                    value: Number(e.target.value),
+                  },
+                });
+              }}
               // helperText="In Millions"
             />
             <TextField
+              variant="outlined"
               className={classes.textField}
               label={'Growth Rate'}
               type="number"
               id="population-growth-rate-edit"
               value={Number((population.growthRate * 100).toPrecision(3))}
+              InputProps={{
+                endAdornment: <InputAdornment position="end">%</InputAdornment>,
+              }}
+              onChange={(e) => {
+                setData({
+                  ...data,
+                  population: {
+                    ...data.population,
+                    growthRate: Number(e.target.value) / 100,
+                  },
+                });
+              }}
               // helperText="As a Percentage"
             />
           </div>

@@ -33,7 +33,7 @@ describe('DataForm', () => {
     it('should have the gdp value in billions as its value', () => {
       expect(gdpEdit.prop('value')).toEqual(defaultContext.gdp.value / 1e9);
     });
-    it('should have an onChange that calls context update with an updated context', () => {
+    it('should have an onChange that calls updates GDP value', () => {
       const change = { target: { value: 999 } };
       onChange(change);
       expect(wrapper.prop('setData')).toHaveBeenCalledWith({
@@ -47,8 +47,10 @@ describe('DataForm', () => {
   });
   describe('#gdp-growth-rate-edit', () => {
     let gdpGrowthRateEdit: ReactWrapper;
+    let onChange: Function;
     beforeEach(() => {
       gdpGrowthRateEdit = wrapper.find('#gdp-growth-rate-edit');
+      onChange = gdpGrowthRateEdit.prop('onChange');
     });
     it('should be rendered', () => {
       expect(gdpGrowthRateEdit).toHaveLength(1);
@@ -58,11 +60,24 @@ describe('DataForm', () => {
         defaultContext.gdp.growthRate * 100,
       );
     });
+    it('should have an onChange that updaes gdp growth value', () => {
+      const change = { target: { value: 999 } };
+      onChange(change);
+      expect(wrapper.prop('setData')).toHaveBeenCalledWith({
+        ...context,
+        gdp: {
+          ...context.gdp,
+          growthRate: change.target.value / 100,
+        },
+      });
+    });
   });
   describe('#population-value-edit', () => {
     let populationEdit: ReactWrapper;
+    let onChange: Function;
     beforeEach(() => {
       populationEdit = wrapper.find('#population-value-edit');
+      onChange = populationEdit.prop('onChange');
     });
     it('should be rendered', () => {
       expect(populationEdit).toHaveLength(1);
@@ -72,11 +87,24 @@ describe('DataForm', () => {
         defaultContext.population.value,
       );
     });
+    it('should have an onChange that calls updates population value', () => {
+      const change = { target: { value: 999 } };
+      onChange(change);
+      expect(wrapper.prop('setData')).toHaveBeenCalledWith({
+        ...context,
+        population: {
+          ...context.population,
+          value: change.target.value,
+        },
+      });
+    });
   });
   describe('#population-growth-rate-edit', () => {
     let populationGrowthRateEdit: ReactWrapper;
+    let onChange: Function;
     beforeEach(() => {
       populationGrowthRateEdit = wrapper.find('#population-growth-rate-edit');
+      onChange = populationGrowthRateEdit.prop('onChange');
     });
     it('should be rendered', () => {
       expect(populationGrowthRateEdit).toHaveLength(1);
@@ -85,6 +113,17 @@ describe('DataForm', () => {
       expect(populationGrowthRateEdit.prop('value')).toEqual(
         Number((defaultContext.population.growthRate * 100).toPrecision(3)),
       );
+    });
+    it('should have an onChange that updaes population growth rate value', () => {
+      const change = { target: { value: 999 } };
+      onChange(change);
+      expect(wrapper.prop('setData')).toHaveBeenCalledWith({
+        ...context,
+        population: {
+          ...context.population,
+          growthRate: change.target.value / 100,
+        },
+      });
     });
   });
 });

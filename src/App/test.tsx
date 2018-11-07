@@ -37,7 +37,6 @@ describe('App', () => {
     it('should have the App data prop as its value prop', () => {
       const expectedContext = {
         ...wrapper.childAt(0).prop('data'),
-        update: wrapper.childAt(0).prop('setData'),
       };
       expect(contextProvider.prop('value')).toEqual(expectedContext);
     });
