@@ -15,8 +15,8 @@ export interface ContextType {
 }
 export const defaultContext: ContextType = {
   gdp: {
-    value: 27e9,
-    growthRate: 0.05,
+    value: 34e9,
+    growthRate: 0.063,
   },
   population: {
     value: 42.86e6,
